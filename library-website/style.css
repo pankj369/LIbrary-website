@@ -1,0 +1,903 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+/* Modal styling */
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    #4caf50,
+    #81c784
+  ); /* Attractive gradient */
+  color: white;
+
+  text-align: center;
+  /* border-radius: 10px; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Headline styling */
+.modal-header h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* Button hover effect */
+.cta-button {
+  background-color: #ff9800;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e65100;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #2575fc;
+  color: #fff; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+
+}
+
+.navbar .logo {
+  /*library logo*/
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  /* gap: 10px; */
+  list-style: none;
+  
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  margin: 5px;
+  padding: 0.75rem 1.5rem; /* Larger tappable area */
+  display: inline-block; /* Ensure the padding applies properly */
+}
+/* Hover effect for navbar links */
+.nav-links li a:hover {
+  /* color: #FFD700; 
+  background-color: white; */
+  color: #fff; /* Change text color */
+  background-color: #2575fc; /* Add a background color */
+  border-radius: 5px; /* Make the hover effect look smooth */
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Add a shadow effect to text */
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Stack the links vertically */
+    display: none; /* Initially hide the links */
+    gap: 10px;
+    position: absolute;
+    top: 60px; /* Adjust according to your navbar height */
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show menu when active */
+  }
+  .nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #2575fc;
+    transition: width 0.3s ease;
+  }
+}
+.search-select {
+  background-color: #495057;
+  width: 50px;
+  text-align: center;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: none;
+  display: flex;
+
+}
+.search-bar input {
+  padding: 5px; /* Increase padding for a better look */
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Round the corners */
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+
+}
+.search-bar input:hover {
+  transform: scale(1); /* Slightly increase the size on hover */
+  border: 2px solid #ffc400;
+}
+
+.search-bar input:focus {
+  border-color: #ffc400; /* Change border color on focus */
+}
+#suggestionsList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+#suggestionsList li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#suggestionsList li:hover {
+  background-color: #f0f0f0;
+}
+
+.search-bar button {
+  background-color: #ffd700; /* Button color */
+  border-radius: 25px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: #0f1111;
+}
+
+.search-bar button:hover {
+  /* background-color: #f7d200; /* Change button color on hover*/
+  /* color: #ffd700; */
+  transform: scale(1.1); /* Slightly increase the size on hover */
+}
+/* General Button Styling */
+.nav-btn {
+  text-decoration: none; /* Underline remove */
+  padding: 10px 20px; /* Space inside button */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Login Button Styling */
+.login-btn {
+  background-color: #007bff; /* Blue color */
+  color: white; /* Text color */
+  border: 2px solid #007bff; /* Border */
+}
+
+.login-btn:hover {
+  background-color: white; /* Hover effect */
+  color: #007bff; /* Text color on hover */
+  border: 2px solid #007bff;
+}
+
+/* Register Button Styling */
+.register-btn {
+  background-color: #28a745; /* Green color */
+  color: white; /* Text color */
+  border: 2px solid #28a745; /* Border */
+}
+
+.register-btn:hover {
+  background-color: white; /* Hover effect */
+  color: #28a745; /* Text color on hover */
+  border: 2px solid #28a745;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .nav-btn {
+      font-size: 14px; /* Smaller font on small screens */
+      padding: 8px 16px; /* Smaller padding */
+  }
+}
+
+#interactiveFeatures {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.feature-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease;
+  background-color: lightgreen;
+}
+
+.card-front {
+  background-color: #ffffff;
+}
+
+.card-back {
+  background-color: #4caf50;
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.burgur:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 30px 10px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero button {
+  background-color: #28a745; /* Change button color */
+  color: #fffdfd;
+  font-family: "Arial", sans-serif;;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #333;
+  color: white;
+  border-color: white;
+}
+.featured-books {
+  /* margin-left: 20px;  Left side margin */
+  /* margin-right: 20px; Right side margin */
+  padding: 10px;
+  background-color: #82e087;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+/* .featured-books:hover{
+  /* transform: scale(1.05); */
+  /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+ } */
+/* Features Section */
+.features {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f4f4f4;
+  flex-wrap: wrap;
+}
+.feature-card {
+  perspective: 1000px;
+  width: 28%;
+  height: 250px;
+  position: relative;
+  background-color: rgb(95, 189, 95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.feature-card {
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for feature cards */
+.feature-card:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.feature-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2575fc;
+}
+.feature-card {
+  perspective: 1000px; /* Required for 3D effect */
+  width: 28%;
+  background-color: rgb(95, 189, 95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover{
+  background-color: white;
+}
+.feature-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Allows 3D transformation */
+  transition: transform 0.6s ease; /* Smooth flip transition */
+  
+}
+
+.feature-card:hover .feature-card-inner {
+  transform: rotateY(180deg); /* Flip animation */
+  
+  
+}
+.feature-card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.feature-card:hover .card-back {
+  transform: rotateY(360deg);
+}
+
+.feature-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back when front is visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+
+  
+}
+
+.feature-card-back {
+  transform: rotateY(180deg); /* Back side is rotated initially */
+  background: #2575fc;
+  color: white;
+  
+}
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.newsletter-form input {
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.newsletter-form button {
+  background-color: #ffd700;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+}
+
+.newsletter-form button:hover {
+  background-color: #6a11cb;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #2575fc;
+}
+
+.search-bar button {
+  background: #2575fc;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #6a11cb;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  display: inline-block; /* Ensures hover is visible */
+  padding: 0.2rem;
+}
+
+.footer-links a:hover {
+  color: #2575fc;
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.chat-body {
+  padding: 10px;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#chatInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.send-message {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.send-message:hover {
+  background-color: #45a049;
+}
+
+.close-chat {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.user-message {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  max-width: 80%;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  max-width: 80%;
+  align-self: flex-start;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Initially hide sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* When the section comes into view */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Styling for Reviews Section */
+#userReviews {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+#reviewForm {
+  margin-bottom: 2rem;
+}
+
+#reviewSubmitForm input,
+#reviewSubmitForm textarea,
+#reviewSubmitForm select {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+}
+
+#reviewSubmitForm button {
+  padding: 0.5rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#reviewSubmitForm button:hover {
+  background-color: #0056b3;
+}
+
+#reviewsList {
+  margin-top: 2rem;
+}
+
+#reviewsContainer .review {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+#reviewsContainer .review h4 {
+  margin-bottom: 0.5rem;
+}
+
+#reviewsContainer .review p {
+  font-style: italic;
+}
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* General styles for the page background when popup/modal is active */
+body.modal-active {
+  overflow: hidden;
+  filter: blur(2px);
+}
+
+/* Exit Popup Styling */
+.exit-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.exit-popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.exit-popup-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.exit-popup-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.exit-popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.exit-popup-content button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#subscribeBtn {
+  background-color: #007bff;
+  color: #fff;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+#subscribeBtn:hover {
+  background-color: #0056b3;
+}
+
+#closePopup {
+  background-color: #ccc;
+  color: #000;
+}
+
+#closePopup:hover {
+  background-color: #aaa;
+}
+
+/* Exit-Intent Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+ /*.modal-dialog {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+.modal-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #fff;
+    padding-bottom: 15px;
+}
+.modal-header .btn-close {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.modal-body {
+  font-size: 1.1rem;
+  padding: 30px;
+  text-align: center;
+}
+.modal-content input,
+.modal-content button {
+  display: block;
+  /* margin: 10px auto; */
+} 
+
+ .modal-content input {
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+} 
+
+.modal-content button {
+  /* padding: 10px 15px; */
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content #subscribeBtn {
+  background-color: #007bff;
+  color: white;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.modal-content #subscribeBtn:hover {
+  background-color: #0056b3;
+}
+
+.modal-content #closePopup {
+  background-color: #ccc;
+  color: black;
+}
+
+.modal-content #closePopup:hover {
+  background-color: #aaa;
+}
+
+/* Show the popup/modal when active */
+.exit-popup.active,
+.modal.active {
+  display: flex;
+}
+.modal-footer {
+  /* border-top: 2px solid #fff; */
+  background: rgba(0, 0, 0, 0.3);
+  /* padding: 10px; */
+  display: flex;
+  /* margin: 10px; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* justify-content:space-evenly; */
+}
+
+.modal-footer .btn {
+  background-color: #ff8c00; /* Orange button */
+  color: white;
+  border-radius: 5px;
+}
+
+.modal-footer .btn:hover {
+  background-color:white;
+  border: 2px solid #ff8c00;
+  color: #e67e00;
+  
+}
